@@ -1,0 +1,205 @@
+/* Basic reset for margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header */
+.site-header {
+    /* Add some padding and background color */
+    padding: 16px;
+    background-color: #f0f0f0;
+    /* Use Flexbox to arrange logo and nav vertically on mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style the logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px; /* Space below logo on mobile */
+}
+
+/* Style the navigation */
+.site-nav ul {
+    list-style: none; /* Remove bullets */
+    display: flex;
+    flex-direction: column; /* Stack links vertically on mobile */
+    gap: 8px; /* Space between links */
+    align-items: center;
+}
+
+/* Style the links */
+.site-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.site-nav a:hover {
+    background: #e0e0e0;
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%; /* Image will not be wider than its container */
+    height: auto;    /* Height adjusts to keep the image ratio */
+    display: block;  /* Removes small gaps below images */
+}
+
+/* Media query for larger screens (desktop) */
+@media (min-width: 600px) {
+    .site-header {
+        flex-direction: row; /* Arrange logo and nav side by side */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        margin-bottom: 0; /* Remove bottom margin on desktop */
+    }
+    .site-nav ul {
+        flex-direction: row; /* Show nav links in a row */
+        gap: 16px; /* More space between links */
+    }
+    /* Improve hero section spacing on wider screens */
+    .hero {
+        padding: 60px 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.25rem;
+    }
+}
+
+/* Hero section styles */
+.hero {
+    /* Add a background color */
+    background-color: #e6f7ff;
+    /* Add padding for space around the content */
+    padding: 40px 16px;
+    /* Center the text */
+    text-align: center;
+    /* Add space below the header */
+    margin-top: 24px;
+}
+
+/* Headline in the hero section */
+.hero h1 {
+    font-size: 2rem; /* Make the headline bigger */
+    margin-bottom: 16px; /* Space below the headline */
+}
+
+/* Paragraph in the hero section */
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 0; /* No extra space needed at the bottom */
+    color: #333;
+}
+
+/* Destination Cards section */
+.destinations {
+    /* Add some padding and background color */
+    background-color: #f9fff2;
+    padding: 32px 16px;
+}
+
+/* Container for all cards */
+.destination-cards {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically on mobile */
+    gap: 24px; /* Space between cards */
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto; /* Center the cards section */
+}
+
+/* Individual card styles */
+.destination-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+/* Card image */
+.destination-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* Destination name */
+.destination-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #2e7d32;
+}
+
+/* Description */
+.destination-card p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Layout for desktop: show destination cards in a row and improve spacing */
+@media (min-width: 768px) {
+    .destination-cards {
+        flex-direction: row; /* Cards side by side */
+        justify-content: center;
+        align-items: stretch;
+        gap: 32px; /* More space between cards */
+    }
+    .destination-card {
+        max-width: 280px;
+    }
+}
+
+/* CTA (Call-to-Action) section styles */
+.cta {
+    background-color: #e0f7fa; /* Light blue background */
+    text-align: center;
+    padding: 36px 16px;
+    margin: 32px 0 0 0; /* Space above CTA */
+}
+
+/* CTA message */
+.cta h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00695c;
+}
+
+/* CTA button styles */
+.cta-button {
+    display: inline-block;
+    background-color: #2e7d32; /* Green background */
+    color: #fff; /* White text */
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+/* Button hover effect for accessibility */
+.cta-button:hover,
+.cta-button:focus {
+    background-color: #388e3c;
+    outline: 2px solid #004d40; /* Visible focus outline */
+}
